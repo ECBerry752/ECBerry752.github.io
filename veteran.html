@@ -1,1 +1,79 @@
-My Story comming soon!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Force Legacy | Emma Berry</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .slideshow-container { max-width: 800px; position: relative; margin: auto; background: #1e293b; padding: 20px; border-radius: 15px; border: 1px solid #334155; }
+        .mySlides { display: none; text-align: center; }
+        img { width: 100%; max-height: 500px; object-fit: contain; border-radius: 10px; }
+        .prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; margin-top: -22px; color: white; font-weight: bold; font-size: 18px; transition: 0.6s ease; border-radius: 0 3px 3px 0; user-select: none; background: rgba(0,0,0,0.5); }
+        .next { right: 0; border-radius: 3px 0 0 3px; }
+        .prev { left: 0; }
+        .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+        .caption { color: #60a5fa; font-size: 1rem; padding: 15px 0; font-weight: bold; }
+    </style>
+</head>
+<body style="background: #0f172a; color: white; padding: 40px; font-family: sans-serif;">
+
+    <div style="max-width: 900px; margin: auto;">
+        <a href="index.html" style="display: inline-block; padding: 10px 20px; background: #334155; color: white; text-decoration: none; border-radius: 5px; font-size: 0.8rem;">
+            ← Return to Digital Card
+        </a>
+        
+        <h1 style="margin-top: 30px; border-bottom: 2px solid #334155; padding-bottom: 10px;">
+            Air Force Legacy: The Pioneer Years
+        </h1>
+
+        <!-- YOUR STORY SECTION -->
+        <div style="margin-bottom: 40px;">
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #cbd5e1;">
+                <!-- PASTE YOUR COPILOT PARAGRAPH BELOW THIS LINE -->
+                In September 1994, I began a journey that would define my career. From the discipline of basic training to the technical rigors of an 18-week tech school in 1995, I learned the art of splicing fiber, coax, and copper, and the physical grit of climbing poles to build the nation's critical infrastructure.
+            </p>
+        </div>
+
+        <!-- SLIDESHOW SECTION -->
+        <div class="slideshow-container">
+            <!-- Slide 1 -->
+            <div class="mySlides">
+                <img src="Photo%201.jpg">
+                <div class="caption">The Foundation: September 1994</div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="mySlides">
+                <img src="Photo%202.jpg">
+                <div class="caption">Technical Mastery: Pole Climbing & Electronics</div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="mySlides">
+                <img src="Photo%203.jpg">
+                <div class="caption">Pioneering Tech: Fiber Optic Splicing</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+    </div>
+
+    <!-- SLIDESHOW SCRIPT -->
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) { showSlides(slideIndex += n); }
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
+</body>
+</html>
