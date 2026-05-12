@@ -1,0 +1,36 @@
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    font-family: system-ui, -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.business-card {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+    border-top: 6px solid #3b82f6; /* A professional blue accent */
+}
+
+h1 { color: #1e293b; margin: 0; font-size: 1.8rem; }
+.tagline { color: #64748b; font-weight: 500; margin: 0.5rem 0; }
+.specialty { color: #3b82f6; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2rem; }
+
+.links { display: flex; flex-direction: column; gap: 12px; }
+
+.btn {
+    text-decoration: none;
+    background: #1e293b;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.btn:hover { background: #3b82f6; }
