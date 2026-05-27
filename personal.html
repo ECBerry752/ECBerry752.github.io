@@ -1,1 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond the Screen | Emma Berry</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* The main split screen container */
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr; /* Left side is slightly wider for text */
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+
+        /* Styling for the personal slideshow area */
+        .personal-slideshow {
+            max-width: 100%;
+            position: relative;
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: fit-content;
+        }
+
+
+        .mySlides {
+            display: none;
+            width: 100%;
+            text-align: center;
+        }
+
+
+        /* Tailored specifically for vertical/portrait orientation photos */
+        .mySlides img {
+            width: 100%;
+            max-height: 550px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+
+        /* Navigation Arrows */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 12px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 5px;
+            user-select: none;
+            background: rgba(0,0,0,0.5);
+        }
+        .next { right: 15px; }
+        .prev { left: 15px; }
+        .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+
+        .caption {
+            color: #60a5fa;
+            font-size: 0.95rem;
+            padding: 10px 0 0 0;
+            font-weight: bold;
+        }
+
+
+        /* Responsive design: Stacks vertically on mobile screens */
+        @media (max-width: 768px) {
+            .split-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body style="background: #0f172a; color: white; padding: 40px; font-family: sans-serif;">
+
+
+    <div style="max-width: 1000px; margin: auto;">
+        <a href="index.html" style="display: inline-block; padding: 10px 20px; background: #334155; color: white; text-decoration: none; border-radius: 5px; font-size: 0.8rem;">
+            ← Return to Digital Card
+        </a>
+        
+        <h1 style="margin-top: 30px; border-bottom: 2px solid #334155; padding-bottom: 10px;">
+            Beyond the Screen: Lifelong Learning & Adventure
+        </h1>
+
+
+        <div class="split-layout">
+            
+            <div>
+                <p style="font-size: 1.2rem; line-height: 1.8; color: #cbd5e1; margin-bottom: 25px;">
+                    Leadership requires balance. When I am not delivering strategic technology initiatives or mentoring technical teams, I am usually outdoors or exploring new avenues of personal growth. I believe in staying curious, staying active, and always viewing myself as a "work-in-progress."
+                </p>
+
+
+                <div style="background: #1e293b; padding: 25px; border-radius: 12px; border: 1px solid #334155; margin-bottom: 20px;">
+                    <h3 style="color: #60a5fa; margin-top: 0;">🌲 The Great Outdoors</h3>
+                    <p style="line-height: 1.8; color: #cbd5e1; margin: 0;">
+                         I love to explore! Whether it’s local hiking trails, fishing, or camping in the natural beauty of North Carolina, the outdoors is where I disconnect to recharge my strategic thinking. Nature is the ultimate reminder of adaptation and resilience.
+                    </p>
+                </div>
+
+
+                <div style="background: #1e293b; padding: 25px; border-radius: 12px; border: 1px solid #334155;">
+                    <h3 style="color: #60a5fa; margin-top: 0;">📚 Creative Outlets & Learning</h3>
+                    <p style="line-height: 1.8; color: #cbd5e1; margin-bottom: 15px;">
+                        Curiosity doesn't stop at the office door. I treat life as a continuous learning laboratory—constantly reading, exploring digital content creation, mastering new technology trends, and diving into creative side projects that challenge my brain in new ways.
+                    </p>
+                    
+                    <ul style="list-style-type: none; padding-left: 5px; line-height: 2; color: #cbd5e1; font-size: 1.05rem; margin: 0;">
+                        <li style="margin-bottom: 8px;">✨ Custom Card-Making & Paper Crafts</li>
+                        <li style="margin-bottom: 8px;">🌱 Personal Home Gardening</li>
+                        <li style="margin-bottom: 8px;">🧶 Cross Stitch & Crochet</li>
+                        <li style="margin-bottom: 8px;">💻 Designing & Coding this Website!</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="personal-slideshow">
+                
+                <div class="mySlides">
+                    <img src="angler.jpg" alt="Emma's Adventures">
+                    <div class="caption">Just South of "The Frying Pan"</div>
+                </div>
+
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+
+
+        </div> </div>
+
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) { showSlides(slideIndex += n); }
+        
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            
+            // Hide navigation arrows if there is only 1 slide available
+            let prevBtn = document.getElementsByClassName("prev")[0];
+            let nextBtn = document.getElementsByClassName("next")[0];
+            if (slides.length <= 1) {
+                if(prevBtn) prevBtn.style.display = "none";
+                if(nextBtn) nextBtn.style.display = "none";
+            }
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            if (slides[slideIndex-1]) {
+                slides[slideIndex-1].style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
 
